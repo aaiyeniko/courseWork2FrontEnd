@@ -109,7 +109,6 @@ var store = new Vue({
             var letters = /^[A-Za-z]+$/
             if (phoneNumber.value.match(integers) && name.value.match(letters)) {
                 alert('Your Registration number has accepted....');
-                window.location.href = "/index.html"
 
                 if( this.checkout.Name != '' && this.checkout.Phone_No != null){
                     if(this.checkout.Name === this.currentUserId.Name){
