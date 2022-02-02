@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+body .container {
+  position: relative;
+  margin: 5% auto;
+  margin-top: 3%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+}
+
+body .container .bg {
+  background-image: url("bg.jpg");
+  opacity: 0.6;
+  background-color: black;
+  position: absolute;
+  top: -10%;
+  height: 140vw;
+  width: 99vw;
+  z-index: -5;
+}
+
+body .container .header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 2fr .3fr;
+      grid-template-columns: 1.5fr 2fr .3fr;
+  width: 80vw;
+  position: relative;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container .header .sort select {
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: white;
+  font-size: 16px;
+  margin-right: 5%;
+}
+
+body .container .header .search input {
+  padding: 10px 10px;
+  font-size: 16px;
+  line-height: 1.5m;
+  width: 80%;
+}
+
+body .container .header .cart-btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: white;
+  cursor: pointer;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+body .container .header .cart-btn:focus {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+body .container .header hr {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  width: 100%;
+  margin: 2% 0;
+}
+
+body .container .section1 {
+  clear: both;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .2fr .2fr .2fr;
+      grid-template-columns: .2fr .2fr .2fr;
+  grid-row-gap: 5%;
+  grid-column-gap: 5%;
+  width: 80vw;
+  margin: auto;
+  padding-bottom: 10em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container .section1 .list {
+  padding: 40px 30px;
+  background-color: rgba(23, 47, 58, 0.9);
+  -webkit-box-shadow: 15px 15px 5px #626262;
+          box-shadow: 15px 15px 5px #626262;
+  border-radius: 20px;
+  width: auto;
+  color: white;
+}
+
+body .container .section1 strong {
+  text-transform: uppercase;
+}
+
+body .container .section1 .btn {
+  bottom: 7%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  margin: auto;
+  padding: 10px 20px;
+  background-color: rgba(32, 114, 221, 0.9);
+  color: white;
+  border-radius: 10px;
+}
+
+body .container .section1 .btn:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+body .container .section1 .image {
+  width: 270px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+body .container .checkout {
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70vw;
+  margin: auto;
+}
+
+body .container .checkout .btn {
+  background-color: rgba(213, 115, 50, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body .container .checkout .btn:hover {
+  background-color: rgba(253, 4, 4, 0.9);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-weight: bold;
+}
+
+body .container .checkout .submit {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+body .container .checkout .submit input {
+  font: size 1em;
+  padding: 10px 20px;
+  border-top: none;
+  border-left: none;
+  border-radius: 10px;
+  margin-right: 2%;
+  -webkit-box-shadow: -10px -2px 10px #d6d6d6;
+          box-shadow: -10px -2px 10px #d6d6d6;
+}
+
+body .container .checkout .submit input:focus {
+  border-color: none;
+  outline: none;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .container .checkout .submit button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fbe413), to(#1edaf3));
+  background-image: linear-gradient(to bottom right, #fbe413, #1edaf3);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+body .container .checkout .submit button:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/*# sourceMappingURL=style.css.map */

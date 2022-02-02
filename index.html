@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>After School Learning</title>
+</head>
+
+<body>
+    <div class="container" id="app">
+
+        <div class="header">
+            <div class="sort">
+                <select name="sortBy" id="select" v-model="sortBy">
+                    <option value="subject">Sort by Subject</option>
+                    <option value="location">Sort by Location</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="availability">Sort by Availability</option>
+                </select>
+                <select name="orderby" id="orderBy" v-model="orderBy">
+                    <option value="ascending">Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+            </div>
+
+            <form action="" class="search">
+                <input type="text" v-model="searchValue" placeholder="Search for a lesson"></a>
+            </form>
+
+            <button class="cart-btn" value="add" v-if="cart.length === 0 && showProduct !== false" disabled>
+                Cart&nbsp;&nbsp;{{cartItemCount}}&nbsp;
+                <span class="fas fa-cart-plus"></span>
+            </button>
+            <button class="cart-btn" value="add" @click="showCheckout" v-else>
+                Cart&nbsp;&nbsp;{{cartItemCount}}&nbsp;
+                <span class="fas fa-cart-plus"></span>
+            </button>
+            <hr>
+        </div>
+
+        <div v-if='showProduct'>
+            <div class="courses">
+                <div v-for="lesson in sortLessons" :key="lesson.id" class="course">
+                    <img :src="lesson.image" alt="img" class="image">
+                    <h6>Subject: {{lesson.subject}}</h6>
+                    <h6>Location: {{lesson.location}}</h6>
+                    <h6>Price: <i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</h6>
+                    <h6>Available spaces: {{lesson.spaces}}</h6>
+                    <button class="btn" @click="addCourseToCart(lesson)" v-if='canAddToCart(lesson)'>Add
+                        to Cart</button>
+                    <button disabled='disabled' v-else>No more spaces in this class</button>
+                    <span v-if="lesson.spacesAvailable === itemsInCart(lesson.id)">
+                        Sold out!
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div v-else>
+
+            <div class="courses">
+
+                <div v-for="lesson in cart" class="course">
+                    <img v-bind:src="lesson.image" alt="img" class="image">
+                    <h6>Subject: {{lesson.subject}}</h6>
+                    <h6>Location: {{lesson.location}}</h6>
+                    <h6 id="spaces">numberPurchased: {{lesson.numberPurchased}}</h6>
+                    <h6>Price: <i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</h6>
+                    <button class="btn" @click="removeCourseFromCart(lesson)">Remove</button>
+                </div>
+
+                <div class="submit">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" v-model.trim="checkout.Name" />
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="text" name="phone-number" id="phone-number" v-model="checkout.Phone_No" />
+                    <button type="submit" class="submitBtn" id="btnSub" @click="isNumber">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="server.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
